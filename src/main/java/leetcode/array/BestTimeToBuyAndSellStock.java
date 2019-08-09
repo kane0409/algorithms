@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 /**
  * 找到最佳卖股票位置
