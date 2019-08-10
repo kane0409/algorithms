@@ -41,6 +41,6 @@ public class FindTheCelebrity extends SelfRelation {
 class SelfRelation {
     public boolean know(int a, int b) {
 
-        return false;
+        return true;
     }
 }

@@ -21,8 +21,8 @@ public class FindAllNumbersDisappearedInAnArray {
                 map.put(nums[i], -1);
             }
         }
-        for(int k:map.keySet()){
-            if(map.get(k)!=-1){
+        for (int k : map.keySet()) {
+            if (map.get(k) != -1) {
                 list.add(k);
             }
         }
@@ -31,14 +31,8 @@ public class FindAllNumbersDisappearedInAnArray {
     }
 
     public static void main(String[] args) {
-        int[] nums = {4,3,2,7,8,2,3,1};
+        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
         List<Integer> missedNums = getMissedNums(nums);
         System.out.println(missedNums);
-//        for (int i = 0; i < missedNums.size(); i++) {
-//            print
-//        }
-
     }
-
-
 }
