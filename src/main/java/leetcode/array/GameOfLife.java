@@ -83,11 +83,11 @@ public class GameOfLife {
     /**
      * 计算每个cell有多少个活着的邻居
      *
-     * @param board
-     * @param m
-     * @param n
-     * @param i
-     * @param j
+     * @param board cell面板，二维数组
+     * @param m     m行
+     * @param n     n列
+     * @param i     外层循环i
+     * @param j     内层循环j
      * @return
      */
     public static int getLiveCell(int[][] board, int m, int n, int i, int j) {
