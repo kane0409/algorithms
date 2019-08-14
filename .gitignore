@@ -1,3 +1,4 @@
-/bin/
 .idea
-.class
+*.class
+*.iml
+target
