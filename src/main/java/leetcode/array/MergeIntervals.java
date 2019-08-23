@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,6 +24,9 @@ public class MergeIntervals {
         for (Interval2 inter : result) {
             System.out.println(inter);
         }
+
+        System.out.println("=================================");
+
     }
 
     public List<Interval2> getMerge(List<Interval2> intervals) {
@@ -51,6 +55,51 @@ public class MergeIntervals {
         }
 
         return result;
+    }
+
+    /**
+     * 类型为二维数组的写法
+     * 注意LeetCode上不支持lambda写法，汗
+     *
+     * @param intervals
+     * @return
+     */
+    public int[][] merge(int[][] intervals) {
+
+        List<int[]> result = new ArrayList<>();
+        if (intervals == null || intervals.length == 0) {
+            return result.toArray(new int[intervals.length][]);
+        }
+
+        //LeetCode上不支持，汗
+        Arrays.sort(intervals, (inter1, inter2) -> {
+            if (inter1[0] == inter2[0]) {
+                return inter1[0] - inter2[0];
+            }
+            return inter1[1] - inter2[1];
+        });
+
+
+        /*Arrays.sort(intervals, new Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                if(a[0] == b[0]) {
+                    return a[1] - b[1];
+                }
+                return a[0] - b[0];
+            }
+        });*/
+
+        for (int[] interval : intervals) {
+            if (result.size() == 0 || result.get(result.size() - 1)[1] < interval[0]) {
+                result.add(interval);
+            } else {
+                result.get(result.size() - 1)[1] = Math.max(result.get(result.size() - 1)[1],
+                        interval[1]);
+            }
+        }
+
+        return result.toArray(new int[result.size()][]);
+
     }
 
 }
