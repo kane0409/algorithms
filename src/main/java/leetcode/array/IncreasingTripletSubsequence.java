@@ -16,7 +16,7 @@ public class IncreasingTripletSubsequence {
     }
 
     public static boolean getTarget(int[] nums) {
-        //就是按照数组下标顺序找出三个增大的值
+        //就是按照数组下标顺序找出三个增大的值，相邻，但可以不是按照1增大
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
 

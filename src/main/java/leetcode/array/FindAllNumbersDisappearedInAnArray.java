@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class FindAllNumbersDisappearedInAnArray {
     public static List<Integer> getMissedNums(int[] nums) {
+        //要点：第一次遍历数组，将每个下标作为key放到map中，map作用是保存连续的从1到n的值
+        //第二次遍历看元素是否是map中的key，如果是就将map中这个key对应的value改成-1
+        //遍历map，将value不为-1的放到list中，即得到缺少的那个元素
         ArrayList<Integer> list = new ArrayList<>();
 
         HashMap<Integer, Integer> map = new HashMap<>();

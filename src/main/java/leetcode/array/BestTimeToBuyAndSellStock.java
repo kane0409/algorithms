@@ -13,6 +13,7 @@ public class BestTimeToBuyAndSellStock {
             return 0;
         }
 
+        //设置最大值接收最大差值，最小值接收最小元素
         int max = 0;
         int min = array[0];
 
